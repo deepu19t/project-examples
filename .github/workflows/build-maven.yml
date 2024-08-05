@@ -12,7 +12,7 @@ jobs:
      runs-on: ubuntu-latest
      env:
       OIDC_PROVIDER: 'deepu19t'
-      PLATFORM_REPO: 'blr-td-mvn-virtual'
+      PLATFORM_REPO: 'blr-td-maven-virtual-final'
      defaults:
       run:
         working-directory: ./maven-examples/maven-example
