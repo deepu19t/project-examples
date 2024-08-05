@@ -44,7 +44,7 @@ jobs:
          
            
        - name: Install Dependencies
-         run: jf mvn clean install --build-name=blr-docker-local --build-number=1
+         run: jf mvn clean install --build-name=blr-maven-local --build-number=1
            
        #- name: Run tests
       #   run: mvn test
@@ -55,10 +55,10 @@ jobs:
        - name: Publish Build info With JFrog CLI
          run: |
           # Collect environment variables for the build
-             jf rt bce blr-docker-local 1
+             jf rt bce blr-maven-local 1
           # Collect VCS details from git and add them to the build
-          jf rt build-add-git blr-docker-local 1
+          jf rt build-add-git blr-maven-local 1
           # Publish build info
           jf rt build-publish blr-docker-local 1
           #promotion
-          jf rt bpr blr-docker-local 1 blr-maven-local
+          jf rt bpr blr-maven-local 1 blr-maven-local
