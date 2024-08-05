@@ -55,10 +55,10 @@ jobs:
        - name: Publish Build info With JFrog CLI
          run: |
           # Collect environment variables for the build
-             jf rt bce dt-maven-sample-test 1
+             jf rt bce blr-td-mvn-virtual 1
           # Collect VCS details from git and add them to the build
-          jf rt build-add-git dt-maven-sample-test 1
+          jf rt build-add-git blr-td-mvn-virtual 1
           # Publish build info
-          jf rt build-publish dt-maven-sample-test 1
+          jf rt build-publish blr-td-mvn-virtual 1
           #promotion
-          jf rt bpr dt-maven-sample-test 1 dt-prod-libs-release-local
+          jf rt bpr blr-td-mvn-virtual 1 blr-maven-local
