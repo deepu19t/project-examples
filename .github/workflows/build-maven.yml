@@ -39,7 +39,7 @@ jobs:
       
        - name: Set CLI Config
          run: |
-           jf mvn-config --global=true --repo-resolve-releases=$PLATFORM_REPO --repo-deploy-releases=$PLATFORM_REPO
+           jf mvn-config --global=true --repo-resolve-releases=$PLATFORM_REPO --repo-deploy-releases=$PLATFORM_REPO --repo-resolve-snapshots=$PLATFORM_REPO
          
          
            
