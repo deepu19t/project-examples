@@ -46,4 +46,4 @@ jobs:
           jf rt build-add-git blr-td-maven-virtual-final 1
           # Publish build info
           jf rt build-publish blr-td-maven-virtual-final 1
-          jf rt bpr blr-td-maven-virtual-final 1 blr-td-maven-virtual-final
+    
