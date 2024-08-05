@@ -14,9 +14,9 @@ jobs:
       OIDC_PROVIDER: 'deepu19t'
       #OIDC_AUDIENCE: 'access-oidc-demo'
       PLATFORM_REPO: 'blr-td-mvn-virtual'
-     defaults:
-      run:
-        working-directory: ./package
+     #defaults:
+      #run:
+      #  working-directory: ./package
      steps:
        - name: Checkout
          uses: actions/checkout@v3
