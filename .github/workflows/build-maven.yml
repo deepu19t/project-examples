@@ -12,7 +12,6 @@ jobs:
      runs-on: ubuntu-latest
      env:
       OIDC_PROVIDER: 'deepu19t'
-      #OIDC_AUDIENCE: 'access-oidc-demo'
       PLATFORM_REPO: 'blr-td-mvn-virtual'
      defaults:
       run:
@@ -23,12 +22,6 @@ jobs:
               
        - name: Setup Node npm
          uses: actions/setup-node@v3
-  
-      # - name: Setup jfrog cli
-       #  uses: jfrog/setup-jfrog-cli@v3
-      #   env:
-      #    JF_URL: ${{ secrets.JF_URL }}
-     #     JF_ACCESS_TOKEN: ${{ env.ACCESS_TOKEN }}
    
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v3
@@ -40,25 +33,16 @@ jobs:
        - name: Set CLI Config
          run: |
            jf mvn-config --global=true
-         
-         
-           
+                    
        - name: Install Dependencies
-         run: jf mvn clean install --build-name=blr-maven-local --build-number=1
+         run: jf mvn clean install --build-name=blr-maven-local-test --build-number=1
            
-       #- name: Run tests
-      #   run: mvn test
-         
-      # - name: Publish
-     #    run: jf mvn publish
-     #    
+
        - name: Publish Build info With JFrog CLI
          run: |
           # Collect environment variables for the build
-             jf rt bce blr-maven-local 1
+             jf rt bce blr-maven-local-test 1
           # Collect VCS details from git and add them to the build
-          jf rt build-add-git blr-maven-local 1
+          jf rt build-add-git blr-maven-local-test 1
           # Publish build info
-          jf rt build-publish blr-maven-local 1
-          #promotion
-          #jf rt bpr blr-maven-local 1 blr-maven-local-test
+          jf rt build-publish blr-maven-local-test 1
