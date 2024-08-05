@@ -35,14 +35,14 @@ jobs:
            jf mvn-config --global=true
                     
        - name: Install Dependencies
-         run: jf mvn clean install --build-name=blr-maven-local-test --build-number=1
+         run: jf mvn clean install --build-name=blr-td-maven-virtual-final --build-number=1
            
 
        - name: Publish Build info With JFrog CLI
          run: |
           # Collect environment variables for the build
-             jf rt bce blr-maven-local-test 1
+             jf rt bce blr-td-maven-virtual-final 1
           # Collect VCS details from git and add them to the build
-          jf rt build-add-git blr-maven-local-test 1
+          jf rt build-add-git blr-td-maven-virtual-final 1
           # Publish build info
-          jf rt build-publish blr-maven-local-test 1
+          jf rt build-publish blr-td-maven-virtual-final 1
