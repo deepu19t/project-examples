@@ -16,7 +16,7 @@ jobs:
       PLATFORM_REPO: 'blr-td-mvn-virtual'
      defaults:
       run:
-        working-directory: ./maven-examples
+        working-directory: ./maven-examples/maven-example
      steps:
        - name: Checkout
          uses: actions/checkout@v3
