@@ -44,7 +44,7 @@ jobs:
          
            
        - name: Install Dependencies
-         run: jf mvn clean install --build-name=dt-maven-sample-test --build-number=1
+         run: jf mvn clean install --build-name=blr-td-mvn-virtual --build-number=1
            
        #- name: Run tests
       #   run: mvn test
